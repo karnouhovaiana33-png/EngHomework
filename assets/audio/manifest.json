@@ -1,0 +1,71 @@
+{
+  "voice": "en-GB-RyanNeural",
+  "locale": "en-GB",
+  "rate": "-12%",
+  "clips": {
+    "open": {
+      "text": "Open.",
+      "file": "open.mp3"
+    },
+    "close": {
+      "text": "Close.",
+      "file": "close.mp3"
+    },
+    "send": {
+      "text": "Send.",
+      "file": "send.mp3"
+    },
+    "receive": {
+      "text": "Receive.",
+      "file": "receive.mp3"
+    },
+    "window": {
+      "text": "Window.",
+      "file": "window.mp3"
+    },
+    "box": {
+      "text": "Box.",
+      "file": "box.mp3"
+    },
+    "gate": {
+      "text": "Gate.",
+      "file": "gate.mp3"
+    },
+    "bag": {
+      "text": "Bag.",
+      "file": "bag.mp3"
+    },
+    "book": {
+      "text": "Book.",
+      "file": "book.mp3"
+    },
+    "door": {
+      "text": "Door.",
+      "file": "door.mp3"
+    },
+    "postcard": {
+      "text": "Postcard.",
+      "file": "postcard.mp3"
+    },
+    "gift": {
+      "text": "Gift.",
+      "file": "gift.mp3"
+    },
+    "photo": {
+      "text": "Photo.",
+      "file": "photo.mp3"
+    },
+    "letter": {
+      "text": "Letter.",
+      "file": "letter.mp3"
+    },
+    "parcel": {
+      "text": "Parcel.",
+      "file": "parcel.mp3"
+    },
+    "message": {
+      "text": "Message.",
+      "file": "message.mp3"
+    }
+  }
+}

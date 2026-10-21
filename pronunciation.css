@@ -1,0 +1,14 @@
+.action-audio-slot{display:grid;grid-template-columns:minmax(0,1fr) 35px;gap:6px;align-items:stretch;min-width:0}
+.action-audio-slot [data-bin]{width:100%;min-width:0}
+.pronounce{display:inline-flex;align-items:center;justify-content:center;padding:0;width:35px;min-width:35px;height:35px;color:#f2d08b;background:linear-gradient(#294c57,#173742);border:1px solid #92a49a;box-shadow:0 2px 4px #061c2433;border-radius:7px;flex-shrink:0}
+.pronounce svg{display:block;pointer-events:none}
+.bins .pronounce{align-self:center;padding:0;font-size:inherit}
+.pronounce:hover,.bins .pronounce:hover{background:#3a6667;border-color:#f4d38f}
+.pronounce.is-playing{color:#173e45;background:#efd28e;border-color:#fff0c3;box-shadow:0 0 0 3px #f0d18d40}
+.pronounce:focus-visible{outline:3px solid #77d0d9;outline-offset:3px}
+.card-audio-shell{position:relative;min-width:0}
+.card-audio-shell>.card{width:100%;height:100%}
+.pronounce-object{position:absolute;top:9px;right:9px;width:31px;height:31px;min-width:31px;z-index:2;background:#0e2d3ae8}
+.pronunciation-status{font-size:12px;color:#5b6c67;height:20px;margin:5px 0 0;line-height:20px}
+@media(max-width:700px){.action-audio-slot{grid-template-columns:minmax(0,1fr);gap:5px}.bins .pronounce{width:100%;height:28px;min-width:0;border-color:#718d88}.pronounce-object{width:28px;height:28px;min-width:28px;top:6px;right:6px}.pronounce-object svg{width:16px;height:16px}.pronunciation-status{font-size:11px}}
+@media print{.pronounce,.pronunciation-status{display:none!important}.card-audio-shell{break-inside:avoid}}
