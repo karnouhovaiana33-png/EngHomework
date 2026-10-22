@@ -1,0 +1,145 @@
+{
+  "voice": "en-GB-RyanNeural",
+  "clips": {
+    "navigator": {
+      "text": "navigator.",
+      "rate": "-14%",
+      "file": "navigator.mp3"
+    },
+    "technician": {
+      "text": "technician.",
+      "rate": "-14%",
+      "file": "technician.mp3"
+    },
+    "archivist": {
+      "text": "archivist.",
+      "rate": "-14%",
+      "file": "archivist.mp3"
+    },
+    "explorer": {
+      "text": "explorer.",
+      "rate": "-14%",
+      "file": "explorer.mp3"
+    },
+    "kind": {
+      "text": "kind.",
+      "rate": "-14%",
+      "file": "kind.mp3"
+    },
+    "friendly": {
+      "text": "friendly.",
+      "rate": "-14%",
+      "file": "friendly.mp3"
+    },
+    "funny": {
+      "text": "funny.",
+      "rate": "-14%",
+      "file": "funny.mp3"
+    },
+    "clever": {
+      "text": "clever.",
+      "rate": "-14%",
+      "file": "clever.mp3"
+    },
+    "careful": {
+      "text": "careful.",
+      "rate": "-14%",
+      "file": "careful.mp3"
+    },
+    "quiet": {
+      "text": "quiet.",
+      "rate": "-14%",
+      "file": "quiet.mp3"
+    },
+    "brave": {
+      "text": "brave.",
+      "rate": "-14%",
+      "file": "brave.mp3"
+    },
+    "helpful": {
+      "text": "helpful.",
+      "rate": "-14%",
+      "file": "helpful.mp3"
+    },
+    "read-maps": {
+      "text": "read maps.",
+      "rate": "-14%",
+      "file": "read-maps.mp3"
+    },
+    "show-the-way": {
+      "text": "show the way.",
+      "rate": "-14%",
+      "file": "show-the-way.mp3"
+    },
+    "fix-machines": {
+      "text": "fix machines.",
+      "rate": "-14%",
+      "file": "fix-machines.mp3"
+    },
+    "check-machines": {
+      "text": "check machines.",
+      "rate": "-14%",
+      "file": "check-machines.mp3"
+    },
+    "read-the-log": {
+      "text": "read the log.",
+      "rate": "-14%",
+      "file": "read-the-log.mp3"
+    },
+    "keep-books": {
+      "text": "keep books.",
+      "rate": "-14%",
+      "file": "keep-books.mp3"
+    },
+    "find-clues": {
+      "text": "find clues.",
+      "rate": "-14%",
+      "file": "find-clues.mp3"
+    },
+    "ask-questions": {
+      "text": "ask questions.",
+      "rate": "-14%",
+      "file": "ask-questions.mp3"
+    },
+    "team": {
+      "text": "team.",
+      "rate": "-14%",
+      "file": "team.mp3"
+    },
+    "notice": {
+      "text": "notice.",
+      "rate": "-14%",
+      "file": "notice.mp3"
+    },
+    "message": {
+      "text": "message.",
+      "rate": "-14%",
+      "file": "message.mp3"
+    },
+    "report": {
+      "text": "report.",
+      "rate": "-14%",
+      "file": "report.mp3"
+    },
+    "frozen": {
+      "text": "Frozen.",
+      "rate": "-14%",
+      "file": "frozen.mp3"
+    },
+    "starters-team": {
+      "text": "This is Tiko. He has a team.",
+      "rate": "-22%",
+      "file": "starters-team.mp3"
+    },
+    "starters-message": {
+      "text": "The team has a message. Listen!",
+      "rate": "-22%",
+      "file": "starters-message.mp3"
+    },
+    "starters-frozen": {
+      "text": "Go to the Frozen Station.",
+      "rate": "-22%",
+      "file": "starters-frozen.mp3"
+    }
+  }
+}

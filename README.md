@@ -2,6 +2,13 @@
 
 Interactive English homework for A1 Movers.
 
+## Mission 01 — My First Expedition
+
+- [Movers](https://karnouhovaiana33-png.github.io/EngHomework/mission-01/): two qualities, two because reasons, two skills and five recap gaps.
+- [Starters — separate simpler version](https://karnouhovaiana33-png.github.io/EngHomework/mission-01/starters/): one quality, one skill, four short sentences and three short listening clips.
+
+Both versions include Tiko's introduction, an illustrated drawable ID card, diary writing, pronunciation, persistent answers and printing. Each version saves separately.
+
 ## Mission 02 — Station in Motion
 
 - Sort twelve illustrated cards using four actions.
