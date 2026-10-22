@@ -1,5 +1,9 @@
 {
   "listen-1": "I can fix machines.",
   "listen-2": "I can read the log.",
-  "listen-3": "I can read maps."
+  "listen-3": "I can read maps.",
+  "trait-kind": "I help my friends.",
+  "trait-friendly": "I say hello to new people.",
+  "trait-funny": "I make people laugh.",
+  "trait-careful": "I check my work."
 }

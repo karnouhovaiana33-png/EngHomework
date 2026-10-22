@@ -3,7 +3,9 @@
   const KEY='english-quest-homework01-bridge-v1',$=s=>document.querySelector(s);
   const jobs={navigator:{picture:[1,0],skills:['read maps','show the way']},technician:{picture:[3,0],skills:['fix machines','check machines']},archivist:{picture:[1,2],skills:['read the log','keep books']}};
   const traits={kind:'I help my friends.',friendly:'I say hello to new people.',funny:'I make people laugh.',careful:'I check my work.'};
+  const traitPictures={kind:[0,0],friendly:[1,0],funny:[0,1],careful:[1,1]};
   const skills={'read maps':[1,0],'show the way':[1,0],'fix machines':[3,0],'check machines':[3,0],'read the log':[1,2],'keep books':[0,1]};
+  const skillPictures={'read maps':[0,0],'show the way':[1,0],'fix machines':[2,0],'check machines':[0,1],'read the log':[1,1],'keep books':[2,1]};
   const listen=['fix machines','read the log','read maps'];
   const shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;};
   const notSolved=a=>{let b;do{b=shuffle(a);}while(b.every((v,i)=>v===a[i]));return b;};
@@ -45,7 +47,15 @@
   function option(value,group,picture,meaning,index){
     const box=document.createElement('div');box.className='choice';const b=document.createElement('button');b.className='pick';b.type='button';b.dataset.group=group;b.dataset.value=value;
     b.setAttribute('aria-label',group.startsWith('q')?'Picture '+(index+1):value);
-    if(picture){const art=document.createElement('span');art.className='art';art.style.backgroundPosition=`${picture[0]*100/3}% ${picture[1]*50}%`;art.setAttribute('aria-hidden','true');b.append(art);}
+    if(group==='traits'){
+      const frame=document.createElement('span');frame.className='trait-picture';frame.setAttribute('aria-hidden','true');
+      const img=document.createElement('img');img.src='assets/trait-scenes.webp';img.alt='';img.draggable=false;
+      img.style.left=(-traitPictures[value][0]*100)+'%';img.style.top=(-traitPictures[value][1]*100)+'%';frame.append(img);b.append(frame);
+    }else if(group==='skills'||group.startsWith('q')){
+      const frame=document.createElement('span');frame.className='skill-picture';frame.setAttribute('aria-hidden','true');
+      const img=document.createElement('img');img.src='assets/skill-scenes.webp';img.alt='';img.draggable=false;
+      img.style.left=(-skillPictures[value][0]*100)+'%';img.style.top=(-skillPictures[value][1]*100)+'%';frame.append(img);b.append(frame);
+    }else if(picture){const art=document.createElement('span');art.className='art';art.style.backgroundPosition=`${picture[0]*100/3}% ${picture[1]*50}%`;art.setAttribute('aria-hidden','true');b.append(art);}
     if(!group.startsWith('q')){
       const text=document.createElement('span');text.className='word';text.textContent=value;b.append(text);
       if(meaning){const small=document.createElement('span');small.className='meaning';small.textContent=meaning;b.append(small);}
@@ -60,7 +70,12 @@
       }else{const i=Number(group.slice(1));state.answers[i]=value;state.checked[i]=false;}
       update();save();
     };
-    box.append(b);if(!group.startsWith('q'))box.append(audioButton(value));return box;
+    box.append(b);if(!group.startsWith('q'))box.append(audioButton(value));
+    if(group==='traits'){
+      const sentence=document.createElement('button');sentence.type='button';sentence.className='meaning-audio';sentence.dataset.audio='trait-'+value;
+      sentence.textContent='▶ Listen to the sentence';sentence.setAttribute('aria-label','Listen: '+meaning);box.append(sentence);
+    }
+    return box;
   }
   function renderSkills(){
     const area=$('#skills');area.replaceChildren();$('#skillHint').hidden=!!state.job;
@@ -72,7 +87,11 @@
     for(let i=0;i<3;i++){
       const t=tokens(i),row=document.createElement('div');row.className='sentence-task';row.id='sentence'+i;
       const heading=document.createElement('h3');heading.textContent=(i+1)+' · '+headings[i];row.append(heading);
-      if(!t.length){const p=document.createElement('p');p.className='small';p.textContent='Make your choice in Task 2 first.';row.append(p);area.append(row);continue;}
+      if(!t.length){
+        const p=document.createElement('p');p.className='small';p.lang='ru';p.textContent=['Сначала выбери профессию в задании 2. Здесь появятся слова для твоего предложения.','Сначала выбери качество для себя в задании 2. Здесь появятся слова для твоего предложения.','Сначала выбери профессию и умение в задании 2. Здесь появятся слова для твоего предложения.'][i];
+        const link=document.createElement('a');link.className='choice-link';link.href=['#jobs','#traits','#skills'][i];link.textContent=['Choose my job ↑','Choose my quality ↑','Choose my skill ↑'][i];
+        if(i===2&&!state.job)link.href='#jobs';row.append(p,link);area.append(row);continue;
+      }
       const line=document.createElement('div');line.className='answer-line';line.setAttribute('aria-label','Your sentence '+(i+1));
       const bank=document.createElement('div');bank.className='bank';bank.setAttribute('aria-label','Word bank '+(i+1));
       const tile=(id,inLine)=>{const b=document.createElement('button');b.type='button';b.textContent=t[id];b.dataset.token=String(id);b.setAttribute('aria-label',(inLine?'Return word: ':'Add word: ')+t[id]);
@@ -123,7 +142,7 @@
   const player=$('#player');let playing=null,request=0;
   document.addEventListener('click',async e=>{
     const b=e.target.closest('[data-audio]');if(!b)return;const current=++request;player.pause();playing=b.dataset.audio;
-    player.src=playing.startsWith('listen-')?'assets/'+playing+'.mp3':'../assets/audio/'+playing.replaceAll(' ','-')+'.mp3';
+    player.src=/^(listen-|trait-)/.test(playing)?'assets/'+playing+'.mp3':'../assets/audio/'+playing.replaceAll(' ','-')+'.mp3';
     $('#audioStatus').textContent='Listening…';try{await player.play();}catch(e){if(current===request)$('#audioStatus').textContent='Audio unavailable. Tap Listen to try again.';}
   });
   player.onended=()=>{if(playing?.startsWith('listen-')){state.heard[Number(playing.slice(-1))-1]=true;update();save();}$('#audioStatus').textContent='';};
