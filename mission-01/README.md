@@ -3,11 +3,11 @@
 Two separate versions, with separate saved answers:
 
 - **Movers:** `index.html`. One job, two qualities with two because reasons, two skills, original Tiko introduction video and five-gap recap video.
-- **Starters:** `starters/index.html`. One job, one quality, one skill, four short sentences without required because, and three short listening clips with three word choices.
+- **Starters:** `starters/index.html`. Four tiny tasks with Russian instructions: enter a name, choose kind/funny, choose draw/jump/swim, and answer two picture listening questions. The three-line personal card fills automatically and is read aloud. Only the name is typed. No job, age, portrait, diary or long videos.
 
-The learner draws a portrait or uses their initials on a physical ID-card illustration, then types an introduction on a diary page. English vocabulary has local pronunciation buttons. Listening feedback supports correction and replay. The teacher assesses language quality and speaking; the page checks required parts and listening choices only.
+In Movers the learner draws a portrait or uses their initials on a physical ID-card illustration, then types an introduction on a diary page. Both versions have local pronunciation buttons. Listening feedback supports correction and replay. The teacher assesses language quality and speaking; the page checks required parts and listening choices only.
 
-All parts are assigned. The two required speaking checkboxes are learner confirmations, not automatic speech assessment.
+Speaking checkboxes are learner confirmations, not automatic speech assessment. The simple Starters version has its own v2 save key; earlier Starters work and Movers work remain stored separately. Restart clears only the simple version.
 
 Open the desired HTML file while keeping the folder structure. Shared assets, scripts and styles must remain in the parent Mission 01 folder. No accounts, external fonts, build step, speech service or live connection are needed once files have been downloaded. Responses and drawing stay in localStorage in the same browser/device.
 
