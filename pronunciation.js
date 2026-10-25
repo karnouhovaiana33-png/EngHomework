@@ -59,6 +59,7 @@
     return button;
   }
   audio.addEventListener('ended', () => { clearButton(); status.textContent = ''; });
+  audio.addEventListener('pause', () => { if(audio.paused){clearButton(); status.textContent = '';} });
   audio.addEventListener('error', () => { clearButton(); status.textContent = 'Audio could not play. Tap the speaker to try again.'; });
   document.querySelectorAll('[data-bin]').forEach(choice => {
     const slot = document.createElement('div');

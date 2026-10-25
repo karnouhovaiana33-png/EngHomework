@@ -1,0 +1,229 @@
+{
+  "voice": "en-GB-RyanNeural",
+  "rate": "-18%",
+  "sampleRate": 24000,
+  "tracks": {
+    "listen-repeat-start": {
+      "file": "listen-repeat-start.mp3",
+      "duration": 91.76,
+      "segments": [
+        {
+          "text": "Listen and repeat.",
+          "start": 0.0,
+          "speechEnd": 2.592,
+          "pauseAfter": 2
+        },
+        {
+          "text": "Open.",
+          "start": 4.592,
+          "speechEnd": 6.464,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Close.",
+          "start": 9.464,
+          "speechEnd": 11.432,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Send.",
+          "start": 14.432,
+          "speechEnd": 16.376,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Receive.",
+          "start": 19.376,
+          "speechEnd": 21.512,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A gate.",
+          "start": 24.512,
+          "speechEnd": 26.456,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A door.",
+          "start": 29.456,
+          "speechEnd": 31.4,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A radio.",
+          "start": 34.4,
+          "speechEnd": 36.536,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A screen.",
+          "start": 39.536,
+          "speechEnd": 41.576,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A fan.",
+          "start": 44.576,
+          "speechEnd": 46.544,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is opening.",
+          "start": 49.544,
+          "speechEnd": 51.608,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is closing.",
+          "start": 54.608,
+          "speechEnd": 56.792,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is sending messages.",
+          "start": 59.792,
+          "speechEnd": 62.504,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is receiving messages.",
+          "start": 65.504,
+          "speechEnd": 68.36,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is working.",
+          "start": 71.36,
+          "speechEnd": 73.472,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is not working.",
+          "start": 76.472,
+          "speechEnd": 78.872,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Usually.",
+          "start": 81.872,
+          "speechEnd": 83.768,
+          "pauseAfter": 3
+        },
+        {
+          "text": "But now.",
+          "start": 86.768,
+          "speechEnd": 88.76,
+          "pauseAfter": 3
+        }
+      ]
+    },
+    "listen-repeat-final": {
+      "file": "listen-repeat-final.mp3",
+      "duration": 121.808,
+      "segments": [
+        {
+          "text": "Listen and repeat.",
+          "start": 0.0,
+          "speechEnd": 2.592,
+          "pauseAfter": 2
+        },
+        {
+          "text": "Hi, Tiko!",
+          "start": 4.592,
+          "speechEnd": 7.208,
+          "pauseAfter": 4
+        },
+        {
+          "text": "I am at the station.",
+          "start": 11.208,
+          "speechEnd": 13.608,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The gate is opening.",
+          "start": 17.608,
+          "speechEnd": 20.08,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The radio is sending messages.",
+          "start": 24.08,
+          "speechEnd": 27.488,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The door is closing.",
+          "start": 31.488,
+          "speechEnd": 34.128,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The screen is not working.",
+          "start": 38.128,
+          "speechEnd": 41.2,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The fan is turning.",
+          "start": 45.2,
+          "speechEnd": 47.768,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The gate usually closes.",
+          "start": 51.768,
+          "speechEnd": 54.72,
+          "pauseAfter": 4
+        },
+        {
+          "text": "But now it is opening.",
+          "start": 58.72,
+          "speechEnd": 61.336,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The gate usually closes, but now it is opening.",
+          "start": 65.336,
+          "speechEnd": 69.776,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The radio usually receives messages.",
+          "start": 73.776,
+          "speechEnd": 77.64,
+          "pauseAfter": 4
+        },
+        {
+          "text": "But now it is sending messages.",
+          "start": 81.64,
+          "speechEnd": 84.88,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The radio usually receives messages, but now it is sending messages.",
+          "start": 88.88,
+          "speechEnd": 94.832,
+          "pauseAfter": 6
+        },
+        {
+          "text": "Please check the screen because it is not working.",
+          "start": 100.832,
+          "speechEnd": 104.84,
+          "pauseAfter": 4
+        },
+        {
+          "text": "Thank you, Tiko!",
+          "start": 108.84,
+          "speechEnd": 111.528,
+          "pauseAfter": 4
+        },
+        {
+          "text": "Now read your two comparisons and your message to Tiko aloud.",
+          "start": 115.528,
+          "speechEnd": 120.808,
+          "pauseAfter": 1
+        }
+      ]
+    }
+  }
+}

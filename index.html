@@ -9,15 +9,23 @@
 <link rel="stylesheet" href="motion-journal.css?v=20261022-2">
 <link rel="stylesheet" href="pronunciation.css?v=20261022-2">
 <link rel="stylesheet" href="card-art.css?v=20261022-2">
+<link rel="stylesheet" href="speaking.css?v=20261025-1">
 </head>
 <body>
 <div class="masthead"><a href="#" class="brand"><span class="compass" aria-hidden="true">✦</span><span><strong>ENGLISH QUEST</strong><small>THE LOST WORLDS</small></span></a><span class="masthead-note">Explorer fieldwork · Movers</span></div>
-<header class="hero"><div class="hero-inner"><div class="hero-copy"><div class="eyebrow">The Frozen Station / Training outpost</div><h1>Station<br>in <em>Motion</em></h1><p>Your next field assignment is here. Follow the signals, watch the station and report to Tiko.</p><div class="hero-buttons"><a class="hero-primary" href="#part1">Begin fieldwork <span aria-hidden="true">→</span></a><a href="#part2">View cameras</a></div><div class="hero-meta"><span>Mission 02</span><span>12 action cards</span><span>5 live cameras</span></div></div><img class="tiko-hero" src="assets/tiko-field-guide.webp" alt="Tiko welcomes you with his field notebook" width="365" height="410"></div></header>
-<nav class="quest-nav" aria-label="Your assignment"><div class="quest-nav-inner"><a href="#part1"><b>1</b> Action lab</a><a href="#part2"><b>2</b> Live cameras</a><a href="#part3"><b>3</b> Field report</a><span class="nav-progress">LOOK · THINK · WRITE</span></div></nav>
+<header class="hero"><div class="hero-inner"><div class="hero-copy"><div class="eyebrow">The Frozen Station / Training outpost</div><h1>Station<br>in <em>Motion</em></h1><p>Your next field assignment is here. Follow the signals, watch the station and report to Tiko.</p><div class="hero-buttons"><a class="hero-primary" href="#repeat-start">Begin fieldwork <span aria-hidden="true">→</span></a><a href="#part2">View cameras</a></div><div class="hero-meta"><span>Mission 02</span><span>12 action cards</span><span>5 live cameras</span></div></div><img class="tiko-hero" src="assets/tiko-field-guide.webp" alt="Tiko welcomes you with his field notebook" width="365" height="410"></div></header>
+<nav class="quest-nav" aria-label="Your assignment"><div class="quest-nav-inner"><a href="#repeat-start"><b>♫</b> Listen & repeat</a><a href="#part1"><b>1</b> Action lab</a><a href="#part2"><b>2</b> Live cameras</a><a href="#part3"><b>3</b> Field report</a><a href="#repeat-final"><b>♫</b> Let’s say it!</a></div></nav>
 <main>
 <div class="toolbar"><span class="save" id="saveStatus" role="status">Answers save on this device.</span><button id="print">Print worksheet</button><button id="restart">Start again</button></div>
 <div id="resetBox" class="reset-box" hidden><p>Start a new attempt? This will clear your answers on this device.</p><button id="cancelReset">Keep my work</button> <button id="confirmReset">Clear and start again</button></div>
 <label class="name">Explorer <input id="name" autocomplete="given-name" placeholder="Your name" maxlength="70"></label>
+<section id="repeat-start" class="repeat-block">
+<div class="repeat-heading"><span class="repeat-emblem" aria-hidden="true">♫</span><div><div class="step">BEFORE YOU START</div><h2>Listen and repeat!</h2></div></div>
+<p class="repeat-instruction">Press Play. Listen, then say each word or phrase aloud in the pause.</p>
+<div class="repeat-player"><div class="repeat-controls"><audio id="repeat-start-audio" data-repeat-audio controls preload="metadata" src="assets/audio/listen-repeat-start.mp3" aria-label="Words and phrases: listen and repeat"></audio><button type="button" data-repeat-replay="repeat-start-audio">↻ Replay</button></div><p class="repeat-note">There is a three-second pause after each word or phrase. Repeat as often as you need.</p>
+<div class="repeat-words" aria-label="Words and phrases to repeat"><span>open</span><span>close</span><span>send</span><span>receive</span><span>a gate</span><span>a door</span><span>a radio</span><span>a screen</span><span>a fan</span><span>is opening</span><span>is closing</span><span>is sending messages</span><span>is receiving messages</span><span>is working</span><span>is not working</span><span>usually</span><span>but now</span></div>
+<label class="repeat-self-check"><input type="checkbox" data-repeat-check="warmupRepeated"> I repeated the words and phrases aloud.</label><p class="repeat-status" role="status" aria-live="polite"></p></div>
+</section>
 <section id="part1"><div class="step">01 / Action lab</div><h2>What can you do?</h2><p class="intro">Look at the pictures. Choose a card, then choose its action. Follow the arrow: first → then. On message cards, YOU are the explorer. Tap a speaker to hear a word.</p>
 <div class="legend"><span><b>open</b></span><span><b>close</b></span><span><b>send</b></span><span><b>receive</b></span><span>12 cards · 4 actions</span><button id="mixCards" type="button">Mix cards ↻</button></div>
 
@@ -31,7 +39,19 @@
 <div class="writing journal-spread" aria-label="Your open field diary">
 <div class="journal-page journal-left"><p class="journal-eyebrow">FIELD DIARY · 02</p><h3>My observations</h3><div class="journal-photos" aria-label="Look back at the cameras"><figure><div class="mini-camera" data-mini-camera="gate"></div><figcaption>the gate</figcaption></figure><figure><div class="mini-camera" data-mini-camera="door"></div><figcaption>the door</figcaption></figure></div><p class="journal-instruction">Use the guide and cameras. Choose two objects.</p><label for="compare1">1. The ___ usually ___,<br>but now it ___ .<textarea id="compare1" rows="3" placeholder="Write your first comparison here."></textarea></label><label for="compare2">2. The ___ usually ___,<br>but now it ___ .<textarea id="compare2" rows="3" placeholder="Write your second comparison here."></textarea></label></div>
 <div class="journal-page journal-right"><p class="journal-eyebrow">TO TIKO · FIELD REPORT</p><h3>A message for Tiko</h3><p class="journal-instruction">Tell Tiko what you can see. Ask him to check one thing and give a reason.</p><label for="message">Hi, Tiko! …<br>Please check the … because …<textarea id="message" rows="11" placeholder="Write directly on this page…"></textarea></label><span class="journal-signoff">Your fellow explorer</span></div></div>
-<div class="checklist"><label><input type="checkbox" id="readAloud"> I have read my report aloud.</label><label><input type="checkbox" id="ready"> I am ready to show my report to my teacher.</label></div><p id="reportStatus" class="status" role="status"></p><p class="notice">Your teacher checks the comparisons, message and speaking. Your answers stay in this browser. To share your work, print it or save it as a PDF.</p></section>
+</section>
+<section id="repeat-final" class="repeat-block repeat-final" data-unlocked="false">
+<div class="repeat-heading"><span class="repeat-emblem" aria-hidden="true">♫</span><div><div class="step">YOUR SPEAKING FINISH</div><h2>Let’s say it!</h2></div></div>
+<p class="repeat-instruction">Listen and repeat each sentence aloud. Practise the two long sentences in parts, then say the whole sentence.</p>
+<p class="repeat-lock">First, try all five camera sentences and press Check sentences. Write your two comparisons and your message to Tiko. Then this recording opens.</p>
+<div data-repeat-player hidden>
+<div class="repeat-controls"><audio id="repeat-final-audio" data-repeat-audio controls preload="metadata" data-src="assets/audio/listen-repeat-final.mp3" aria-label="A message to Tiko: listen and repeat"></audio><button type="button" data-repeat-replay="repeat-final-audio">↻ Replay</button></div><p class="repeat-note">Use each pause to speak. Longer sentences have longer pauses.</p>
+<details class="repeat-transcript"><summary>Words for the recording</summary><ol><li>Hi, Tiko!</li><li>I am at the station.</li><li>The gate is opening.</li><li>The radio is sending messages.</li><li>The door is closing.</li><li>The screen is not working.</li><li>The fan is turning.</li><li>The gate usually closes, but now it is opening.</li><li>The radio usually receives messages, but now it is sending messages.</li><li>Please check the screen because it is not working.</li><li>Thank you, Tiko!</li></ol></details>
+<label class="repeat-self-check"><input type="checkbox" data-repeat-check="finalRepeated"> I repeated the recording aloud.</label><p class="repeat-status" role="status" aria-live="polite"></p>
+</div>
+<div class="repeat-own-work"><strong>Now your own words!</strong>Read your two comparisons and your message to Tiko aloud.</div>
+<div class="checklist"><label><input type="checkbox" id="readAloud"> I have read my own report aloud.</label><label><input type="checkbox" id="ready"> I am ready to show my report to my teacher.</label></div><p id="reportStatus" class="status" role="status"></p><p class="notice">Your teacher checks the comparisons, message and speaking. Your answers stay in this browser. To share your work, print it or save it as a PDF.</p>
+</section>
 <footer>Training station · Mission 02 · These pictures do not add events to the quest story.</footer>
 </main>
 <script>
@@ -45,7 +65,7 @@ const freshBank=['opening','closing','sending messages','working','turning'];
 const fresh=()=>({order:mixOrder(),orderEdition:3,bank:shuffle(freshBank),sort:{},checkedSort:false,now:['','','','',''],checkedNow:false,name:'',compare1:'',compare2:'',message:'',readAloud:false,ready:false});
 let state=fresh(),stored=false,storageOK=true,orderMigrated=false;
 try{const raw=localStorage.getItem(KEY);if(raw){const s=JSON.parse(raw);if(s&&Array.isArray(s.order)&&s.order.length===12&&new Set(s.order).size===12&&s.order.every(id=>items.some(x=>x.id===id))){state={...fresh(),...s};state.sort=s.sort&&typeof s.sort==='object'?s.sort:{};state.now=Array.from({length:5},(_,i)=>typeof s.now?.[i]==='string'?s.now[i]:'');state.bank=Array.isArray(s.bank)&&s.bank.length===5&&new Set(s.bank).size===5&&s.bank.every(x=>freshBank.includes(x))?s.bank:fresh().bank;stored=true}}}catch(e){storageOK=false}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(state));storageOK=true;$('#saveStatus').textContent='Saved on this device.'}catch(e){storageOK=false;$('#saveStatus').textContent='Saving is unavailable. Print or save a PDF before closing.'}reportStatus()}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));storageOK=true;$('#saveStatus').textContent='Saved on this device.'}catch(e){storageOK=false;$('#saveStatus').textContent='Saving is unavailable. Print or save a PDF before closing.'}reportStatus();document.dispatchEvent(new Event('homework02-saved'))}
 if(stored){const rawOrder=JSON.parse(localStorage.getItem(KEY));if(rawOrder.orderEdition!==3){state.order=mixOrder(state.order);state.orderEdition=3;orderMigrated=true}}
 const spriteMap={window:[0,1],box:[2,3],gate:[4,5],bag:[6,7],book:[8,9],door:[10,11],postcard:[12],gift:[13],photo:[14],letter:[15],parcel:[16],message:[17]};
 function sprite(n,extra=''){return `<span class="sprite ${extra}" style="--sx:${n%6};--sy:${Math.floor(n/6)}" aria-hidden="true"><img class="atlas-image" src="assets/inventory-atlas.webp" width="1774" height="887" alt="" decoding="async"></span>`}
@@ -78,5 +98,6 @@ document.querySelectorAll('[data-mini-camera]').forEach(el=>el.innerHTML=sceneAr
 init();if(!stored||orderMigrated)save();if(stored&&storageOK)$('#saveStatus').textContent='Your saved answers have been restored.';else if(!storageOK)$('#saveStatus').textContent='Saving is unavailable. Print or save a PDF before closing.';
 </script>
 <script src="card-art.js?v=20261022-2"></script>
-<script src="pronunciation.js?v=20261022-2"></script>
+<script src="pronunciation.js?v=20261025-1"></script>
+<script src="speaking.js?v=20261025-1"></script>
 </body></html>
