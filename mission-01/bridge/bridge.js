@@ -9,7 +9,7 @@
   const listen=['fix machines','read the log','read maps'];
   const shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;};
   const notSolved=a=>{let b;do{b=shuffle(a);}while(b.every((v,i)=>v===a[i]));return b;};
-  const fresh=()=>({name:'',age:'',job:'',trait:'',skill:'',read:false,lines:[[],[],[]],lineChecked:[false,false,false],
+  const fresh=()=>({name:'',age:'',job:'',trait:'',skill:'',read:false,speakingHeard:false,lines:[[],[],[]],lineChecked:[false,false,false],
     banks:[[],[],[]],answers:['','',''],heard:[false,false,false],checked:[false,false,false],
     order:{jobs:shuffle(Object.keys(jobs)),traits:shuffle(Object.keys(traits)),skills:[],q0:shuffle(listen),q1:shuffle(listen),q2:shuffle(listen)}});
   let state=fresh(),storage=true;
@@ -20,7 +20,7 @@
     if(s&&typeof s==='object'){
       state.name=typeof s.name==='string'?s.name.slice(0,35):'';state.age=typeof s.age==='string'?s.age:'';
       state.job=Object.hasOwn(jobs,s.job)?s.job:'';state.trait=Object.hasOwn(traits,s.trait)?s.trait:'';
-      state.skill=jobs[state.job]?.skills.includes(s.skill)?s.skill:'';state.read=s.read===true;
+      state.skill=jobs[state.job]?.skills.includes(s.skill)?s.skill:'';state.read=s.read===true;state.speakingHeard=s.speakingHeard===true;
       for(const group of Object.keys(state.order)){
         const valid=group==='skills'?(jobs[state.job]?.skills||[]):state.order[group];
         state.order[group]=permutation(s.order?.[group],valid)?s.order[group]:shuffle(valid);
@@ -43,7 +43,7 @@
   const lineOK=i=>{const t=tokens(i);return t.length>0&&state.lineChecked[i]&&state.lines[i].length===t.length&&state.lines[i].every((v,j)=>v===j);};
   const cardOK=()=>nameOK()&&ageOK()&&[0,1,2].every(lineOK);
   function resetLine(i){const ids=tokens(i).map((_,j)=>j);state.lines[i]=[];state.lineChecked[i]=false;state.banks[i]=ids.length?notSolved(ids):[];state.read=false;}
-  function audioButton(word){const b=document.createElement('button');b.className='word-audio';b.type='button';b.textContent='▶';b.dataset.audio=word;b.setAttribute('aria-label','Listen: '+word);return b;}
+  function audioButton(word){const b=document.createElement('button');b.className='word-audio';b.type='button';b.textContent='▶';b.dataset.audio=word;b.setAttribute('aria-label','Listen and repeat aloud: '+word);b.title='Listen and repeat aloud';return b;}
   function option(value,group,picture,meaning,index){
     const box=document.createElement('div');box.className='choice';const b=document.createElement('button');b.className='pick';b.type='button';b.dataset.group=group;b.dataset.value=value;
     b.setAttribute('aria-label',group.startsWith('q')?'Picture '+(index+1):value);
@@ -73,7 +73,7 @@
     box.append(b);if(!group.startsWith('q'))box.append(audioButton(value));
     if(group==='traits'){
       const sentence=document.createElement('button');sentence.type='button';sentence.className='meaning-audio';sentence.dataset.audio='trait-'+value;
-      sentence.textContent='▶ Listen to the sentence';sentence.setAttribute('aria-label','Listen: '+meaning);box.append(sentence);
+      sentence.textContent='▶ Listen and repeat aloud';sentence.setAttribute('aria-label','Listen and repeat aloud: '+meaning);box.append(sentence);
     }
     return box;
   }
@@ -108,7 +108,7 @@
     renderSkills();renderSentences();const area=$('#listening');area.replaceChildren();
     for(let i=0;i<3;i++){
       const row=document.createElement('div');row.className='question';row.id='q'+i;
-      row.innerHTML=`<h3>Message ${i+1}</h3><button class="audio" data-audio="listen-${i+1}">▶ Listen</button><div class="choices"></div><button class="check">Check</button><p class="feedback" role="status"></p>`;
+      row.innerHTML=`<h3>Message ${i+1}</h3><button class="audio" data-audio="listen-${i+1}">▶ Listen and repeat aloud</button><div class="choices"></div><button class="check">Check</button><p class="feedback" role="status"></p>`;
       state.order['q'+i].forEach((v,j)=>row.querySelector('.choices').append(option(v,'q'+i,skills[v],null,j)));
       row.querySelector('.check').onclick=()=>{state.checked[i]=true;update();save();};area.append(row);
     }
@@ -128,25 +128,28 @@
       add(good?tokens(i).join(' ')+'.':['My job: …','About me: …','My skill: …'][i],!good);
     }
     $('#read').checked=state.read;$('#read').disabled=!cardOK();
+    $('#speakingPractice').hidden=!cardOK();$('#speakingLocked').hidden=cardOK();
+    $('#speakingAudioStatus').textContent=state.speakingHeard?'✓ Model played. Now tell us about yourself.':'';
     $('#name').setAttribute('aria-invalid',String(!!state.name&&!nameOK()));$('#age').setAttribute('aria-invalid',String(!!state.age&&!ageOK()));
     const done=[];
     for(let i=0;i<3;i++){
       const row=$('#q'+i),good=state.checked[i]&&state.heard[i]&&state.answers[i]===listen[i];done.push(good);row.classList.toggle('done',good);
       row.querySelectorAll('.pick').forEach(b=>{const selected=b.dataset.value===state.answers[i];b.setAttribute('aria-pressed',String(selected));b.parentElement.classList.toggle('selected',selected);b.parentElement.classList.toggle('correct',selected&&good);b.parentElement.classList.toggle('wrong',selected&&state.checked[i]&&state.heard[i]&&!good);});
-      row.querySelector('.feedback').textContent=!state.checked[i]?'':!state.heard[i]?'Listen to the whole message first.':!state.answers[i]?'Choose one picture.':good?'✓ Well done!':'Listen again and try another picture.';
+      row.querySelector('.feedback').textContent=!state.checked[i]?'':!state.heard[i]?'Listen to the whole message and repeat aloud first.':!state.answers[i]?'Choose one picture.':good?'✓ Well done!':'Listen again, repeat aloud and try another picture.';
     }
     const complete=cardOK()&&state.read&&done.every(Boolean);$('#finish').classList.toggle('ready',complete);
     $('#finishTitle').textContent=complete?'Welcome to the crew!':'Your next adventure awaits';
-    $('#finishStatus').textContent=complete?'Mission complete! Your crew pass and Listening Quest are ready.':'Complete your crew pass, read it aloud and finish all three messages.';
+    $('#task5').classList.toggle('done',cardOK()&&state.read);
+    $('#finishStatus').textContent=complete?'Mission complete! Your crew pass, Listening Quest and spoken introduction are ready.':'Complete your crew pass and all three messages. Then tell us about yourself aloud in Task 5.';
   }
   const player=$('#player');let playing=null,request=0;
   document.addEventListener('click',async e=>{
-    const b=e.target.closest('[data-audio]');if(!b)return;const current=++request;player.pause();playing=b.dataset.audio;
-    player.src=/^(listen-|trait-)/.test(playing)?'assets/'+playing+'.mp3':'../assets/audio/'+playing.replaceAll(' ','-')+'.mp3';
-    $('#audioStatus').textContent='Listening…';try{await player.play();}catch(e){if(current===request)$('#audioStatus').textContent='Audio unavailable. Tap Listen to try again.';}
+    const b=e.target.closest('[data-audio]');if(!b)return;if(b.dataset.audio==='speak-model'&&!cardOK())return;const current=++request;player.pause();playing=b.dataset.audio;
+    player.src=/^(listen-|trait-|speak-)/.test(playing)?'assets/'+playing+'.mp3':'../assets/audio/'+playing.replaceAll(' ','-')+'.mp3';
+    $('#audioStatus').textContent='Listen and repeat aloud…';try{await player.play();}catch(e){if(current===request)$('#audioStatus').textContent='Audio unavailable. Tap Listen and repeat aloud to try again.';}
   });
-  player.onended=()=>{if(playing?.startsWith('listen-')){state.heard[Number(playing.slice(-1))-1]=true;update();save();}$('#audioStatus').textContent='';};
-  player.onerror=()=>{$('#audioStatus').textContent='Audio unavailable. Tap Listen to try again.';};
+  player.onended=()=>{if(playing?.startsWith('listen-')){state.heard[Number(playing.slice(-1))-1]=true;update();save();}if(playing==='speak-model'){state.speakingHeard=true;update();save();}$('#audioStatus').textContent='';};
+  player.onerror=()=>{$('#audioStatus').textContent='Audio unavailable. Tap Listen and repeat aloud to try again.';};
   document.addEventListener('visibilitychange',()=>{if(document.hidden){player.pause();$('#audioStatus').textContent='';}});
   for(const id of ['name','age'])$('#'+id).oninput=e=>{state[id]=e.target.value;state.read=false;update();save();};
   $('#read').onchange=e=>{state.read=e.target.checked;update();save();};

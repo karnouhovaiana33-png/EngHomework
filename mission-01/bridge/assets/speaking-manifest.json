@@ -1,0 +1,44 @@
+{
+  "voice": "en-GB-RyanNeural",
+  "rate": "-18%",
+  "file": "speak-model.mp3",
+  "duration": 38.256,
+  "segments": [
+    {
+      "text": "Hello!",
+      "start": 0.0,
+      "speechEnd": 1.872,
+      "pauseAfter": 3
+    },
+    {
+      "text": "My name is Ben.",
+      "start": 4.872,
+      "speechEnd": 7.344,
+      "pauseAfter": 4
+    },
+    {
+      "text": "I am eight years old.",
+      "start": 11.344,
+      "speechEnd": 13.984,
+      "pauseAfter": 4
+    },
+    {
+      "text": "I am a navigator.",
+      "start": 17.984,
+      "speechEnd": 20.504,
+      "pauseAfter": 4
+    },
+    {
+      "text": "I am friendly.",
+      "start": 24.504,
+      "speechEnd": 26.736,
+      "pauseAfter": 4
+    },
+    {
+      "text": "I can read maps.",
+      "start": 30.736,
+      "speechEnd": 33.256,
+      "pauseAfter": 5
+    }
+  ]
+}
