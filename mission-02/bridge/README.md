@@ -1,0 +1,11 @@
+# Mission 02 · Starters Plus
+
+A separate middle step based on Mission 1 Starters Plus: Russian instructions, short English, illustrated choices, three sentence builders, three listening questions and a final spoken report. About 10–15 minutes. No free composition, usually/now comparisons or because clause.
+
+The learner names three objects (gate, radio, screen), chooses what each is doing, then builds The gate is opening / The radio is sending messages / The screen is not working. Upward and outgoing arrows make the pictured actions explicit. These are training examples, not changes to the main quest story. Noun pictures and listening choices have no answer captions. The vocabulary track teaches separate words and phrases without giving the complete sentence-to-picture answers.
+
+The sentence banks open after the camera choices are checked. Whole-sentence listening clips open after the three sentences have been assembled and checked, so they do not supply answers to the initial attempt. The final recording and transcript open after the checked report and name are ready. Both the initial vocabulary track and final model have real pauses for spoken repetition. The pupil then reads their own generated report and self-confirms speaking. Playing audio never sets that confirmation. Teachers assess pronunciation and oral independence.
+
+Answers, shuffled banks, picture order, errors, listening playback and spoken confirmation save separately under english-quest-homework02-bridge-v1. Editing answers revokes spoken confirmation. Completed work is visibly different; Start again requires confirmation and resets only this version. Print/Save PDF shares the completed page without uploading answers. Keep the assets folder with the HTML for offline use. The whole folder is self-contained and has no libraries, remote fonts or runtime speech-service dependency.
+
+Published route: /EngHomework/mission-02/bridge/. The existing Movers root and all Mission 1 levels stay in place. Offline archive: output/mission02-homework-starters-plus.zip in the source project. Illustrations reuse the approved Mission 2 camera atlas and Tiko; no new generated art is needed. scripts/build_mission02_bridge_media.py builds the offline MP3s and timing manifest.

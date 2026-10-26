@@ -1,0 +1,180 @@
+{
+  "voice": "en-GB-RyanNeural",
+  "rate": "-18%",
+  "tracks": {
+    "warmup": {
+      "file": "warmup.mp3",
+      "duration": 47.448,
+      "segments": [
+        {
+          "text": "A gate.",
+          "start": 0.0,
+          "speechEnd": 1.944,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A radio.",
+          "start": 4.944,
+          "speechEnd": 7.08,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A screen.",
+          "start": 10.08,
+          "speechEnd": 12.12,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is opening.",
+          "start": 15.12,
+          "speechEnd": 17.184,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is closing.",
+          "start": 20.184,
+          "speechEnd": 22.368,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is sending messages.",
+          "start": 25.368,
+          "speechEnd": 28.08,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is receiving messages.",
+          "start": 31.08,
+          "speechEnd": 33.936,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is working.",
+          "start": 36.936,
+          "speechEnd": 39.048,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Is not working.",
+          "start": 42.048,
+          "speechEnd": 44.448,
+          "pauseAfter": 3
+        }
+      ]
+    },
+    "model": {
+      "file": "model.mp3",
+      "duration": 40.608,
+      "segments": [
+        {
+          "text": "Hi, Tiko!",
+          "start": 0.0,
+          "speechEnd": 2.616,
+          "pauseAfter": 4
+        },
+        {
+          "text": "My name is Ben.",
+          "start": 6.616,
+          "speechEnd": 9.088,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The gate is opening.",
+          "start": 13.088,
+          "speechEnd": 15.56,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The radio is sending messages.",
+          "start": 19.56,
+          "speechEnd": 22.968,
+          "pauseAfter": 4
+        },
+        {
+          "text": "The screen is not working.",
+          "start": 26.968,
+          "speechEnd": 30.04,
+          "pauseAfter": 4
+        },
+        {
+          "text": "Bye, Tiko!",
+          "start": 34.04,
+          "speechEnd": 36.608,
+          "pauseAfter": 4
+        }
+      ]
+    },
+    "listen-0": {
+      "file": "listen-0.mp3",
+      "duration": 3.408,
+      "segments": [
+        {
+          "text": "The radio is sending messages.",
+          "start": 0.0,
+          "speechEnd": 3.408,
+          "pauseAfter": 0
+        }
+      ]
+    },
+    "listen-1": {
+      "file": "listen-1.mp3",
+      "duration": 3.072,
+      "segments": [
+        {
+          "text": "The screen is not working.",
+          "start": 0.0,
+          "speechEnd": 3.072,
+          "pauseAfter": 0
+        }
+      ]
+    },
+    "listen-2": {
+      "file": "listen-2.mp3",
+      "duration": 2.472,
+      "segments": [
+        {
+          "text": "The gate is opening.",
+          "start": 0.0,
+          "speechEnd": 2.472,
+          "pauseAfter": 0
+        }
+      ]
+    },
+    "word-gate": {
+      "file": "word-gate.mp3",
+      "duration": 1.944,
+      "segments": [
+        {
+          "text": "A gate.",
+          "start": 0.0,
+          "speechEnd": 1.944,
+          "pauseAfter": 0
+        }
+      ]
+    },
+    "word-radio": {
+      "file": "word-radio.mp3",
+      "duration": 2.136,
+      "segments": [
+        {
+          "text": "A radio.",
+          "start": 0.0,
+          "speechEnd": 2.136,
+          "pauseAfter": 0
+        }
+      ]
+    },
+    "word-screen": {
+      "file": "word-screen.mp3",
+      "duration": 2.04,
+      "segments": [
+        {
+          "text": "A screen.",
+          "start": 0.0,
+          "speechEnd": 2.04,
+          "pauseAfter": 0
+        }
+      ]
+    }
+  }
+}
