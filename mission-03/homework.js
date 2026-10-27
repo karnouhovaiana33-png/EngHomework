@@ -122,10 +122,23 @@
     if(attempted)state.finalUnlocked=true;
     $('#speakingLock').hidden=state.finalUnlocked;$('#speakingModel').hidden=!state.finalUnlocked;
     if(state.finalUnlocked&&!$('#finalAudio').getAttribute('src'))$('#finalAudio').src=$('#finalAudio').dataset.src;
-    const message=$('#ownMessage');message.replaceChildren();
-    const greeting=document.createElement('p');greeting.textContent='Hi, Tiko!'+(state.name.trim()?' My name is '+state.name.trim()+'.':'');message.append(greeting);
-    own.forEach((_,i)=>{const p=document.createElement('p');p.textContent=state.own[i].trim()?sentence(i):own[i].prefix+' ___.';if(!state.own[i].trim())p.className='empty';message.append(p);});
-    const bye=document.createElement('p');bye.textContent='Bye, Tiko!';message.append(bye);
+    const message=$('#ownMessage');
+    if(!message.querySelector('[data-voice-own]')){
+      const greeting=document.createElement('p');greeting.id='voiceGreeting';message.append(greeting);
+      own.forEach((item,i)=>{
+        const label=document.createElement('label');label.className='voice-line';label.htmlFor='voice-own-'+i;
+        const prefix=document.createElement('span');prefix.textContent=item.prefix;
+        const input=document.createElement('input');input.id='voice-own-'+i;input.dataset.voiceOwn=i;input.maxLength=240;input.placeholder=item.hint;input.autocomplete='off';input.spellcheck=false;
+        label.append(prefix,input);const print=document.createElement('p');print.className='voice-print';print.dataset.voicePrint=i;
+        message.append(label,print);
+      });
+      const bye=document.createElement('p');bye.textContent='Bye, Tiko!';message.append(bye);
+    }
+    $('#voiceGreeting').textContent='Hi, Tiko!'+(state.name.trim()?' My name is '+state.name.trim()+'.':'');
+    own.forEach((item,i)=>{
+      for(const input of [$(`[data-own="${i}"]`),$(`[data-voice-own="${i}"]`)])if(input!==document.activeElement&&input.value!==state.own[i])input.value=state.own[i];
+      $(`[data-voice-print="${i}"]`).textContent=state.own[i].trim()?sentence(i):item.prefix+' ___.';
+    });
     $('#spoken').checked=state.spoken;
     if(state.completed&&!ready())state.completed=false;
     $('#completedBadge').hidden=!state.completed;$('#finish').textContent=state.completed?'✓ Работа выполнена':'Финиш ✦';
@@ -151,7 +164,7 @@
   });
   document.addEventListener('input',e=>{
     if(e.target.id==='explorerName'){state.name=e.target.value;state.spoken=false;invalidate();}
-    else if(e.target.matches('[data-own]')){state.own[Number(e.target.dataset.own)]=e.target.value;state.spoken=false;invalidate();}
+    else if(e.target.matches('[data-own],[data-voice-own]')){state.own[Number(e.target.dataset.own??e.target.dataset.voiceOwn)]=e.target.value;state.spoken=false;invalidate();}
     else return;
     $('#finishStatus').textContent='';update();save();
   });
