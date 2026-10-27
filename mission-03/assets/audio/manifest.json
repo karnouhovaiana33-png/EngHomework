@@ -1,0 +1,199 @@
+{
+  "voice": "en-GB-RyanNeural",
+  "rate": "-18%",
+  "sampleRate": 24000,
+  "tracks": {
+    "warmup": {
+      "file": "warmup.mp3",
+      "duration": 69.12,
+      "segments": [
+        {
+          "text": "A key.",
+          "start": 0.0,
+          "speechEnd": 1.944,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A box.",
+          "start": 4.944,
+          "speechEnd": 6.96,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A door.",
+          "start": 9.96,
+          "speechEnd": 11.904,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A switch.",
+          "start": 14.904,
+          "speechEnd": 16.896,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A button.",
+          "start": 19.896,
+          "speechEnd": 21.84,
+          "pauseAfter": 3
+        },
+        {
+          "text": "A gate.",
+          "start": 24.84,
+          "speechEnd": 26.784,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Find. Found.",
+          "start": 29.784,
+          "speechEnd": 33.48,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Open. Opened.",
+          "start": 36.48,
+          "speechEnd": 40.008,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Turn. Turned.",
+          "start": 43.008,
+          "speechEnd": 46.536,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Press. Pressed.",
+          "start": 49.536,
+          "speechEnd": 53.112,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Go. Went.",
+          "start": 56.112,
+          "speechEnd": 59.472,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Send. Sent.",
+          "start": 62.472,
+          "speechEnd": 66.12,
+          "pauseAfter": 3
+        }
+      ]
+    },
+    "final": {
+      "file": "final.mp3",
+      "duration": 47.088,
+      "segments": [
+        {
+          "text": "Hi, Tiko!",
+          "start": 0.0,
+          "speechEnd": 2.616,
+          "pauseAfter": 5
+        },
+        {
+          "text": "Yesterday, I went to the park.",
+          "start": 7.616,
+          "speechEnd": 11.192,
+          "pauseAfter": 5
+        },
+        {
+          "text": "I found a box.",
+          "start": 16.192,
+          "speechEnd": 18.712,
+          "pauseAfter": 5
+        },
+        {
+          "text": "I opened the box.",
+          "start": 23.712,
+          "speechEnd": 26.28,
+          "pauseAfter": 5
+        },
+        {
+          "text": "I sent a message to my friend.",
+          "start": 31.28,
+          "speechEnd": 34.52,
+          "pauseAfter": 5
+        },
+        {
+          "text": "Bye, Tiko!",
+          "start": 39.52,
+          "speechEnd": 42.088,
+          "pauseAfter": 5
+        }
+      ]
+    },
+    "sentence-0": {
+      "file": "sentence-0.mp3",
+      "duration": 7.576,
+      "segments": [
+        {
+          "text": "Yesterday, I opened the window.",
+          "start": 0.0,
+          "speechEnd": 3.576,
+          "pauseAfter": 4
+        }
+      ]
+    },
+    "sentence-1": {
+      "file": "sentence-1.mp3",
+      "duration": 7.432,
+      "segments": [
+        {
+          "text": "Yesterday, I found a key.",
+          "start": 0.0,
+          "speechEnd": 3.432,
+          "pauseAfter": 4
+        }
+      ]
+    },
+    "sentence-2": {
+      "file": "sentence-2.mp3",
+      "duration": 7.456,
+      "segments": [
+        {
+          "text": "Yesterday, I sent a message.",
+          "start": 0.0,
+          "speechEnd": 3.456,
+          "pauseAfter": 4
+        }
+      ]
+    },
+    "sentence-3": {
+      "file": "sentence-3.mp3",
+      "duration": 7.792,
+      "segments": [
+        {
+          "text": "Yesterday, I went to the archive.",
+          "start": 0.0,
+          "speechEnd": 3.792,
+          "pauseAfter": 4
+        }
+      ]
+    },
+    "sentence-4": {
+      "file": "sentence-4.mp3",
+      "duration": 7.48,
+      "segments": [
+        {
+          "text": "Yesterday, I turned the switch.",
+          "start": 0.0,
+          "speechEnd": 3.48,
+          "pauseAfter": 4
+        }
+      ]
+    },
+    "sentence-5": {
+      "file": "sentence-5.mp3",
+      "duration": 7.48,
+      "segments": [
+        {
+          "text": "Yesterday, I pressed the button.",
+          "start": 0.0,
+          "speechEnd": 3.48,
+          "pauseAfter": 4
+        }
+      ]
+    }
+  }
+}
