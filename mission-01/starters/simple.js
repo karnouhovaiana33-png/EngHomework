@@ -99,14 +99,16 @@
       });
       q.querySelector('.feedback').textContent=!checked?'':!heard?'Сначала послушай аудио до конца.':!v?'Выбери одну картинку.':good?'✓ Верно! Молодец!':'Попробуй ещё раз. Послушай и выбери другую картинку.';
     }
-    const complete=cardReady()&&state.read&&done.every(Boolean);
+    const reviewReady=window.StartersReview?.ready()??true;
+    const complete=cardReady()&&state.read&&done.every(Boolean)&&reviewReady;
     $('#finish').classList.toggle('ready',complete);
     $('#finishTitle').textContent=complete?'Миссия выполнена!':'Собери свою первую карточку';
     let todo=[];
     if(!validName())todo.push('напиши имя английскими буквами');if(!state.trait)todo.push('выбери качество');
     if(!state.skill)todo.push('выбери умение');if(!state.read)todo.push('прочитай карточку вслух');
     if(!done.every(Boolean))todo.push('выполни два задания на слух');
-    $('#finishStatus').textContent=complete?'Отлично! Твоя карточка готова, оба задания на слух выполнены.':'Осталось: '+todo.join(', ')+'.';
+    if(!reviewReady)todo.push('повтори буквы, собери имя друга и соедини школьные слова с картинками');
+    $('#finishStatus').textContent=complete?'Отлично! Буквы и школьные слова повторены, твоя карточка и задания на слух готовы.':'Осталось: '+todo.join(', ')+'.';
   }
   const player=$('#player');let clip=null;
   document.addEventListener('click',async e=>{
@@ -126,8 +128,9 @@
   $('#restart').onclick=()=>{$('#resetBox').hidden=false;$('#cancelReset').focus();};
   $('#cancelReset').onclick=()=>{$('#resetBox').hidden=true;$('#restart').focus();};
   $('#confirmReset').onclick=()=>{
-    player.pause();clip=null;$('#audioStatus').textContent='';state=fresh();save();build();$('#resetBox').hidden=true;$('#name').focus();
+    player.pause();clip=null;$('#audioStatus').textContent='';state=fresh();window.StartersReview?.reset();save();build();$('#resetBox').hidden=true;$('#name').focus();
   };
   $('#print').onclick=()=>window.print();
+  document.addEventListener('starters-review-changed',()=>{update();});
   build();save();
 })();
