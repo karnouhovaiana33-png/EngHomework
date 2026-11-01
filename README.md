@@ -64,3 +64,7 @@ Check sorting и Check sentences дают проверку и позволяют
 Прослушивание, пауза, перемотка и Replay доступны без сети; одновременно играет только одна запись. Отметки «повторил вслух» выставляет ученик: само воспроизведение не подтверждает произнесение и не записывает голос. Ошибка загрузки допускает повторную попытку. Сохранение использует прежний ключ localStorage: ответы, порядок карточек и написанный текст сохраняются. Новые отметки размещены в `speaking`; Start again очищает их только после явного подтверждения.
 
 При публикации нужны также `speaking.css`, `speaking.js`, два MP3 и `assets/audio/repeat-manifest.json`. Старые записи отдельных слов остаются. Скрипт `scripts/build_mission02_repeat_audio.py` создаёт речь через edge_tts (Ryan, en-GB, −18%), затем соединяет её с реальными паузами; манифест хранит точные границы речи и тишины. Проверки: `tests/check_mission02_repeat.py`, `tests/check_mission02_homework_html.py`, `tests/check_mission02_homework_audio.py`. Проверены декодированная речь и тишина, прослушивание, ошибка/повтор, восстановление, явный сброс, мобильный вид, печать и работа из папки без сети.
+
+## Standalone practice
+
+[Past Simple · Time Lab](past-simple/) — 24 irregular verbs, five short games, saved progress and a separate error-review series. Public student link: https://karnouhovaiana33-png.github.io/EngHomework/past-simple/ .
