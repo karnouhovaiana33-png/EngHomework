@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#203f43">
+  <title>Миссия 04 · Спроси и расскажи</title>
+  <link rel="stylesheet" href="homework.css?v=20261106-1">
+  <script src="homework.js?v=20261106-1" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#warmup">Перейти к заданиям</a>
+<header class="hero" id="top">
+  <div class="hero-copy">
+    <p class="brand">ENGLISH QUEST <span>ДОМАШНЯЯ МИССИЯ</span></p>
+    <p class="eyebrow">МИССИЯ 04 / MOVERS</p>
+    <h1>Спроси.<br><em>Расскажи.</em></h1>
+    <p class="hero-lead">Собери вопросы. Восстанови историю лаборатории. Расскажи её своим голосом.</p>
+    <a href="#warmup" class="primary hero-start">К заданиям</a>
+    <p class="hero-meta">20–25 минут · Past Simple · Вопросы с Did</p>
+  </div>
+  <div class="hero-art"><img src="assets/cover.webp" width="1536" height="1024" alt="Тихая лаборатория с радиоприёмником на столе" fetchpriority="high"><p>Дело 04 <span>Сначала вопрос — потом история</span></p></div>
+</header>
+<nav class="lesson-nav" aria-label="Части домашней работы">
+  <a href="#warmup"><b>01</b> Повторяем</a>
+  <a href="#questions"><b>02</b> Собираем вопросы</a>
+  <a href="#missing"><b>03</b> Дописываем глагол</a>
+  <a href="#story"><b>04</b> Читаем картинки</a>
+  <a href="#speaking"><b>05</b> Рассказываем</a>
+</nav>
+<main>
+  <div class="workbar">
+    <div><p id="saveStatus" class="save-status" role="status">Ответы сохраняются в этом браузере.</p><p id="completedBadge" class="completed-badge" hidden>ДЗ выполнено. Твоя работа сохранена.</p></div>
+    <details class="tools"><summary>Моя работа</summary><div class="tool-menu"><button id="print" type="button">Печать / сохранить PDF</button><button id="restart" type="button">Начать заново</button><button id="restore" type="button" hidden>Вернуть предыдущую попытку</button></div></details>
+  </div>
+  <label class="name-field">Твоё имя <input id="pupilName" maxlength="70" autocomplete="given-name" placeholder="Как тебя зовут?"></label>
+  <div class="progress"><p id="progressText" role="status">Готово: 0 из 5 частей</p><div class="progress-track" aria-hidden="true"><span id="progressFill"></span></div></div>
+
+  <section id="warmup" class="task warmup">
+    <div class="section-heading"><span class="step">01</span><div><p class="eyebrow">НАСТРОЙ СВОЙ ГОЛОС</p><h2>Слушай и повторяй</h2></div><span class="time">2–3 минуты</span></div>
+    <p>Включи запись. Повторяй слова и короткие ответы вслух в паузах. Запись можно послушать ещё раз.</p>
+    <audio id="warmupAudio" controls preload="metadata" src="assets/audio/warmup.mp3" aria-label="Запись для повторения слов и коротких ответов"></audio>
+    <p class="audio-error" id="warmupError" role="status" hidden>Запись не загрузилась. <button type="button" data-retry-audio="warmupAudio">Загрузить ещё раз</button></p>
+    <div class="pair-grid" lang="en"><span>check <i>—</i> checked</span><span>write <i>—</i> wrote</span><span>send <i>—</i> sent</span><span>receive <i>—</i> received</span><span>show <i>—</i> showed</span></div>
+    <div class="short-answers" lang="en"><span>Yes, I did.</span><span>No, I didn’t.</span></div>
+    <label class="confirmation"><input id="warmupSpoken" type="checkbox" disabled> Я послушал(а) запись и повторил(а) вслух.</label>
+    <p id="warmupHint" class="small">Отметка станет доступна, когда запись закончится.</p>
+  </section>
+
+  <section id="questions" class="task">
+    <div class="section-heading"><span class="step">02</span><div><p class="eyebrow">СНАЧАЛА — ПОРЯДОК СЛОВ</p><h2>Собери три вопроса</h2></div><span class="time">4 минуты</span></div>
+    <p>Нажимай на карточки в нужном порядке. Начинай каждый вопрос с <span lang="en">Did</span>. В каждом наборе есть <strong>одно лишнее слово</strong>. Чтобы убрать карточку из вопроса, нажми на неё ещё раз.</p>
+    <div id="questionCards" class="question-cards"></div>
+  </section>
+
+  <section id="missing" class="task">
+    <div class="section-heading"><span class="step">03</span><div><p class="eyebrow">ТЕПЕРЬ ГЛАГОЛ ВПИСЫВАЕШЬ ТЫ</p><h2>Собери и допиши</h2></div><span class="time">5 минут</span></div>
+    <p>Прочитай предложение. Собери вопрос из карточек, поставив карточку <strong>«_____»</strong> на место глагола. Самостоятельно впиши глагол из банка. Начинай вопрос с <span lang="en">Did</span>.</p>
+    <div class="bank-box"><p>Банк глаголов · используй три слова, два останутся лишними</p><div id="verbBank" class="word-bank" lang="en"></div></div>
+    <div id="missingCards" class="question-cards"></div>
+  </section>
+
+  <section id="story" class="task">
+    <div class="section-heading"><span class="step">04</span><div><p class="eyebrow">ЧЕТЫРЕ КАДРА ИЗ ЛАБОРАТОРИИ</p><h2>Восстанови историю</h2></div><span class="time">5 минут</span></div>
+    <p>Рассмотри картинки. Впиши пропущенные глаголы. Используй каждое слово из банка один раз. Затем проверь историю.</p>
+    <div id="storyBank" class="word-bank" lang="en" aria-label="Банк глаголов для истории"></div>
+    <div id="storyCards" class="story-grid"></div>
+    <div class="check-row"><button id="checkStory" class="primary" type="button">Проверить историю</button><p id="storyStatus" class="status" role="status"></p></div>
+  </section>
+
+  <section id="speaking" class="task speaking">
+    <div class="section-heading"><span class="step">05</span><div><p class="eyebrow">ТВОЯ ОЧЕРЕДЬ ГОВОРИТЬ</p><h2>Вопросы и твоя история</h2></div><span class="time">4–5 минут</span></div>
+    <p id="modelLock" class="lock">Запись-образец откроется после твоей попытки: собери и проверь вопросы в заданиях 2 и 3, впиши глаголы и проверь историю в задании 4. Для открытия записи не обязательно ответить без ошибок.</p>
+    <div id="speakingModel" hidden>
+      <p>Послушай запись. Повтори вопросы и предложения в паузах. Затем расскажи историю самостоятельно.</p>
+      <audio id="finalAudio" controls preload="none" data-src="assets/audio/final.mp3" aria-label="Образец вопросов и рассказа с паузами для повторения"></audio>
+      <p class="audio-error" id="finalError" role="status" hidden>Запись не загрузилась. <button type="button" data-retry-audio="finalAudio">Загрузить ещё раз</button></p>
+      <details id="transcript"><summary>Текст записи</summary><div id="modelText" lang="en"></div></details>
+      <div class="say-it"><h3>А теперь самостоятельно</h3><p>Произнеси три вопроса из задания 3. Затем открой картинки без подписей и расскажи историю. Используй <span lang="en">First, Then, Next, Finally</span>.</p><button id="storyMode" type="button" aria-expanded="false">Открыть картинки без подписей</button><div id="oralPictures" class="oral-pictures" hidden></div></div>
+      <label class="confirmation"><input id="questionsSpoken" type="checkbox" disabled> Я произнёс / произнесла три вопроса вслух.</label>
+      <label class="confirmation"><input id="storySpoken" type="checkbox" disabled> Я рассказал(а) историю по картинкам без подписей.</label>
+      <p id="oralHint" class="small">Сначала дослушай образец. Затем говори самостоятельно и отмечай выполненные части.</p>
+    </div>
+    <div class="finish-row"><button id="finish" class="primary" type="button">Завершить ДЗ</button><p id="finishStatus" class="status" role="status"></p></div>
+    <p class="small">Чтобы показать работу учителю, открой «Моя работа» и сохрани PDF. Устный рассказ проверит учитель.</p>
+  </section>
+  <footer><span>ENGLISH QUEST / МИССИЯ 04</span><a href="#top">В начало страницы</a></footer>
+</main>
+<dialog id="resetDialog" aria-labelledby="resetTitle"><p class="eyebrow">НОВАЯ ПОПЫТКА</p><h2 id="resetTitle">Начать заново?</h2><p>Нынешняя работа останется в архиве. Вернуть её можно через «Моя работа».</p><div class="dialog-actions"><button id="cancelReset" type="button">Продолжить мою работу</button><button id="confirmReset" class="primary" type="button">Сохранить в архив и начать</button></div></dialog>
+<dialog id="doneDialog" aria-labelledby="doneTitle"><p class="eyebrow">МИССИЯ 04 / ДЗ ГОТОВО</p><h2 id="doneTitle">Отличная работа!</h2><p id="doneName"></p><p>Ты собрал(а) вопросы и рассказал(а) историю лаборатории.</p><button id="closeDone" class="primary" type="button">Посмотреть мою работу</button></dialog>
+<noscript><p class="noscript">Для сохранения и проверки ответов включи JavaScript. Можно распечатать страницу и выполнить работу на бумаге.</p></noscript>
+</body>
+</html>

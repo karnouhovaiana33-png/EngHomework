@@ -1,0 +1,103 @@
+{
+  "voice": "en-GB-RyanNeural",
+  "rate": "-18%",
+  "sampleRate": 24000,
+  "tracks": {
+    "warmup": {
+      "file": "warmup.mp3",
+      "duration": 44.616,
+      "segments": [
+        {
+          "text": "Check. Checked.",
+          "start": 0.0,
+          "speechEnd": 3.528,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Write. Wrote.",
+          "start": 6.528,
+          "speechEnd": 10.128,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Send. Sent.",
+          "start": 13.128,
+          "speechEnd": 16.776,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Receive. Received.",
+          "start": 19.776,
+          "speechEnd": 23.928,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Show. Showed.",
+          "start": 26.928,
+          "speechEnd": 30.408,
+          "pauseAfter": 3
+        },
+        {
+          "text": "Yes, I did.",
+          "start": 33.408,
+          "speechEnd": 36.0,
+          "pauseAfter": 3
+        },
+        {
+          "text": "No, I didn't.",
+          "start": 39.0,
+          "speechEnd": 41.616,
+          "pauseAfter": 3
+        }
+      ]
+    },
+    "final": {
+      "file": "final.mp3",
+      "duration": 58.328,
+      "segments": [
+        {
+          "text": "Did Sam send a message yesterday?",
+          "start": 0.0,
+          "speechEnd": 3.288,
+          "pauseAfter": 5
+        },
+        {
+          "text": "Did Mia check her bag?",
+          "start": 8.288,
+          "speechEnd": 11.024,
+          "pauseAfter": 5
+        },
+        {
+          "text": "Did Ben write a letter yesterday?",
+          "start": 16.024,
+          "speechEnd": 19.216,
+          "pauseAfter": 5
+        },
+        {
+          "text": "First, he checked the red lights.",
+          "start": 24.216,
+          "speechEnd": 27.96,
+          "pauseAfter": 5
+        },
+        {
+          "text": "Then, he wrote a message.",
+          "start": 32.96,
+          "speechEnd": 36.104,
+          "pauseAfter": 5
+        },
+        {
+          "text": "Next, he sent the message.",
+          "start": 41.104,
+          "speechEnd": 44.32,
+          "pauseAfter": 5
+        },
+        {
+          "text": "Finally, the station received the message.",
+          "start": 49.32,
+          "speechEnd": 53.328,
+          "pauseAfter": 5
+        }
+      ]
+    }
+  }
+}

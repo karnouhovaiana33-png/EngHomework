@@ -68,3 +68,7 @@ Check sorting и Check sentences дают проверку и позволяют
 ## Standalone practice
 
 [Past Simple · Time Lab](past-simple/) — 24 irregular verbs, five short games, saved progress and a separate error-review series. Public student link: https://karnouhovaiana33-png.github.io/EngHomework/past-simple/ .
+
+## Mission 04 · Спроси и расскажи
+
+[Открыть ДЗ миссии 4](mission-04/) — вопросы с Did, самостоятельное заполнение глаголов, история по четырём новым иллюстрациям и две записи с паузами для повторения. Инструкции на русском, ответы сохраняются в браузере. Ссылка для учеников: https://karnouhovaiana33-png.github.io/EngHomework/mission-04/ .

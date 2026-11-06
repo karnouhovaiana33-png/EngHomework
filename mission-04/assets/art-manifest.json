@@ -1,0 +1,47 @@
+[
+  {
+    "file": "cover.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "originalSha256": "53eb6a91752ffa2e6f74adc5cd78755b4cb2c280f658e41b3f8584703029e932",
+    "tool": "Built-in image_gen"
+  },
+  {
+    "file": "frame-a.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "originalSha256": "dc22ae8e00ba15e17b2e756360b4481341b5748e5c31dcf20d0a56e9ab32642d",
+    "tool": "Built-in image_gen"
+  },
+  {
+    "file": "frame-b.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "originalSha256": "59b66da9ed05bfb06a2d84d4214963c4fec399651f2ec88146ce594b376493d4",
+    "tool": "Built-in image_gen"
+  },
+  {
+    "file": "frame-c.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "originalSha256": "f04a22fa98893f9881ee479ce77ae150f560bc965f5715be8aa9c2c5f2cf6689",
+    "tool": "Built-in image_gen"
+  },
+  {
+    "file": "frame-d.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "originalSha256": "5ba7eef71ad082309778c26e604a05ce613a6bb1be4430c8ebf1f3c8de5c3d14",
+    "tool": "Built-in image_gen"
+  }
+]
